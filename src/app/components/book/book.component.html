@@ -1,0 +1,21 @@
+<h1>Books</h1>
+
+<a mat-raised-button color="primary" routerLink="/book/create">Create a book</a>
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <mat-cell *matCellDef="let book;">
+            <i class="material-icons" routerLink="/book/edit/{{book.Id}}">edit</i>
+            <i class="material-icons" routerLink="/book/delete/{{book.Id}}">delete</i>
+        </mat-cell>
+
+        <ng-container matColumnDef="Id">
+            <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.Id}}</mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>

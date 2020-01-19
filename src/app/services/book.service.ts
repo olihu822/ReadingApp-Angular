@@ -12,7 +12,7 @@ export class BookService {
   constructor(private http: HttpClient, private router: Router) { }
 
   getBooks() {
-    return this.http.get(`${Api_Url}/api/book`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/api/book/AllBooks`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
