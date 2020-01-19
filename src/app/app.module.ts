@@ -41,7 +41,7 @@ const routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    
+
   ],
   providers: [
     AuthService,
