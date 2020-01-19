@@ -18,9 +18,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthService } from './services/auth.service';
+import { BookService } from './services/book.service';
+import { LoginComponent } from './components/login/login.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: RegistrationComponent }
 ];
 
@@ -29,6 +32,7 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,7 @@ const routes = [
   ],
   providers: [
     AuthService,
+    BookService,
   ],
   bootstrap: [AppComponent]
 })
