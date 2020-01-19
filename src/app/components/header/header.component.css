@@ -5,10 +5,12 @@
 .nav-btn {
     color: whitesmoke;
     margin-right: 0.5em;
+    font-family: 'Gelasio', cursive;
 }
 
 .mat-toolbar {
     height: 60px;
     align-items: center;
+    font-family: 'Beth Ellen', cursive;
     font-weight: 600;
 }

@@ -1,1 +1,14 @@
 @import '@angular/material/prebuilt-themes/pink-bluegrey.css';
+@import url('https://fonts.googleapis.com/css?family=Beth+Ellen|Cabin+Sketch|Gelasio|Syncopate&display=swap');
+
+
+body {
+    font-family: 'Gelasio', serif;
+  }
+
+  .basic-container {
+    padding: 5px;
+  }
+
+  html, body { height: 100%; 
+  }

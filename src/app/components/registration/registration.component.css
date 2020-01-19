@@ -1,5 +1,12 @@
 .RegisterPage {
-    color: black;
     align-items: center;
     padding-left: 12px;
+}
+
+.nav-btn {
+    font-family: 'Gelasio', cursive;
+}
+
+.mat-form-field {
+    font-family: 'Gelasio', cursive;
 }
