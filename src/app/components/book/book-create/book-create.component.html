@@ -1,0 +1,37 @@
+<p>Create Book</p>
+<br />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="bookForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Book Title" formControlName="Title" type="Title" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Author" formControlName="Author" type="Author" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>Book Genre</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let book of books" [value]="bookGenre.value">
+                        {{bookGenre.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-checkbox formControlName="Owned">Owned?</mat-checkbox>
+        </div>
+        <div>
+            <mat-checkbox formControlName="Reviewed">Reviewed?</mat-checkbox>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Book</button>
+</form>
+
+<a mat-button routerLink="/book/AllBooks">Back to List</a>
+

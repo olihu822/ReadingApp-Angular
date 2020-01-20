@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Book } from '../models/Book';
 
 const Api_Url = 'https://localhost:44305';
 
@@ -13,6 +14,10 @@ export class BookService {
 
   getBooks() {
     return this.http.get(`${Api_Url}/api/book/AllBooks`, { headers: this.getHeaders() });
+  }
+
+  createBook(book: Book) {
+    return this.http.post(`${Api_Url}/api/book/CreateBook`, book, { headers: this.getHeaders() });
   }
 
   private getHeaders() {

@@ -27,7 +27,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/']);
+      this.router.navigate(['/books']);
     });
   }
 
@@ -47,6 +47,6 @@ export class AuthService {
   }
 
   private setHeaders(): HttpHeaders {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`)
   }
 }

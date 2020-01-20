@@ -5,12 +5,15 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
 } from '@angular/material';
 import {
   FormsModule,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,12 +26,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { BookComponent } from './components/book/book.component';
+import { BookCreateComponent } from './components/book/book-create/book-create.component';
+
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'book', children: [
     { path: 'AllBooks', component: BookComponent },
+    { path: 'CreateBook', component: BookCreateComponent},
   ]},
   { path: '**', component: RegistrationComponent }
 ];
@@ -40,6 +46,7 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     BookComponent,
+    BookCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,8 @@ const routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [
     AuthService,

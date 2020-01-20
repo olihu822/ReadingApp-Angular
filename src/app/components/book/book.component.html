@@ -1,8 +1,10 @@
-<h1>Books</h1>
-
-<a mat-raised-button color="primary" routerLink="/book/create">Create a book</a>
+<div>
+    <h1>Books</h1>
+    <a mat-raised-button color="primary" routerLink="/book/CreateBook">Create a book</a>
+</div>
 
 <div>
+    <br>
     <mat-table #table [dataSource]="dataSource">
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -12,10 +14,37 @@
             <i class="material-icons" routerLink="/book/delete/{{book.Id}}">delete</i>
         </mat-cell>
 
-        <ng-container matColumnDef="Id">
-            <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
-            <mat-cell *matCellDef="let book;">{{book.Id}}</mat-cell>
+        <ng-container matColumnDef="Title">
+            <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.Title}}</mat-cell>
         </ng-container>
 
+        <ng-container matColumnDef="Author">
+            <mat-header-cell *matHeaderCellDef>Author</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.Author}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="BookGenre">
+            <mat-header-cell *matHeaderCellDef>Book Genre</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.BookGenre}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Owned">
+            <mat-header-cell *matHeaderCellDef>Owned</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.Owned}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Reviewed">
+            <mat-header-cell *matHeaderCellDef>Reviewed</mat-header-cell>
+            <mat-cell *matCellDef="let book;">{{book.Reviewed}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let book;">
+                <i class="material-icons" routerLink="/books/edit/{{book.BookId}}">edit</i>
+                <i class="material-icons" routerLink="/books/delete/{{book.BookId}}">delete</i>
+            </mat-cell>
+        </ng-container>
     </mat-table>
 </div>
