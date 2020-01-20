@@ -4,6 +4,8 @@
 
 body {
     font-family: 'Gelasio', serif;
+    color: white;
+    background-color: darkgrey;
   }
 
   .basic-container {
@@ -11,4 +13,5 @@ body {
   }
 
   html, body { height: 100%; 
+    font-size: medium;
   }
