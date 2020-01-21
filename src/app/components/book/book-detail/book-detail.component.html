@@ -1,0 +1,35 @@
+<h1>Book Details</h1>
+<br />
+
+<button mat-raised-button color="primary" routerLink="/book/edit/:id">Edit</button>
+
+<div *ngIf="book">
+    <br/>
+    <div>
+        <label>Book Title:</label>
+        <span>{{book.Title}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Book Author:</label>
+        <span>{{book.Author}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Book Genre:</label>
+        <span>{{book.Genre}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Owned?</label>
+        <span>{{book.Owned}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Reviewed?</label>
+        <span>{{book.Reviewed}}</span>
+    </div>
+</div>
+<br/>
+
+<button mat-raised-button color="primary" routerLink="/book/AllBooks">Back to Books</button>

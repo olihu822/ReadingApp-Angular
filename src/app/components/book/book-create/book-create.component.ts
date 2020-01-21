@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { BookService } from 'src/app/services/book.service';
 import { Router } from '@angular/router';
-import { MatFormFieldControl } from '@angular/material';
+import { MatFormFieldControl, MatTableDataSource } from '@angular/material';
+import { BookGenre } from '../../enumeration/BookGenreEnum';
+import { Book } from 'src/app/models/Book';
+
 
 @Component({
   selector: 'app-book-create',
@@ -12,14 +15,20 @@ import { MatFormFieldControl } from '@angular/material';
 export class BookCreateComponent implements OnInit {
 
   bookForm: FormGroup;
-
+  dataSource: MatTableDataSource<Book>;
+  BookGenre: BookGenre;
+  listOfGenres: BookGenre[];
+ 
   constructor(
     private form: FormBuilder, 
     private bookService: BookService, 
-    private router: Router) {
-
-    this.createForm();
-   }
+    private router: Router) 
+    {
+      this.createForm();
+      this.bookService.getBooks().subscribe((genre : BookGenre[]) => {
+        this.listOfGenres = genre;
+      });
+    }
 
   ngOnInit() {
   }

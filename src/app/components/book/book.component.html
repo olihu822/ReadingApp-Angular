@@ -10,9 +10,16 @@
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
         <mat-cell *matCellDef="let book;">
-            <i class="material-icons" routerLink="/book/edit/{{book.Id}}">edit</i>
-            <i class="material-icons" routerLink="/book/delete/{{book.Id}}">delete</i>
+            <i class="material-icons" routerLink="/book/edit/{{book.BookId}}">edit</i>
+            <i class="material-icons" routerLink="/book/delete/{{book.BookId}}">delete</i>
         </mat-cell>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let book;">
+                <i class="material-icons" routerLink="/book/BookDetail/{{book.BookId}}">library_books</i>
+            </mat-cell>
+        </ng-container>
 
         <ng-container matColumnDef="Title">
             <mat-header-cell *matHeaderCellDef>Title</mat-header-cell>

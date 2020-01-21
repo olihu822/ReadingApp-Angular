@@ -16,8 +16,20 @@ export class BookService {
     return this.http.get(`${Api_Url}/api/book/AllBooks`, { headers: this.getHeaders() });
   }
 
-  createBook(book: Book) {
+  getBook(id) {
+    return this.http.get(`${Api_Url}/api/book/${id}`, { headers: this.getHeaders() });
+  }
+
+  createBook(book : Book) {
     return this.http.post(`${Api_Url}/api/book/CreateBook`, book, { headers: this.getHeaders() });
+  }
+
+  editBook(book : Book) {
+    return this.http.put(`${Api_Url}/api/book/Edit`, book, { headers: this.getHeaders() })
+  }
+
+  deleteBook(id) {
+    return this.http.delete(`${Api_Url}/api/book/Delete/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {

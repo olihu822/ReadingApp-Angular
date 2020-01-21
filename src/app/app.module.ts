@@ -27,6 +27,9 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { BookComponent } from './components/book/book.component';
 import { BookCreateComponent } from './components/book/book-create/book-create.component';
+import { EnumerationComponent } from './components/enumeration/enumeration.component';
+import { BookDetailComponent } from './components/book/book-detail/book-detail.component';
+import { BookEditComponent } from './components/book/book-edit/book-edit.component';
 
 
 const routes = [
@@ -34,7 +37,9 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'book', children: [
     { path: 'AllBooks', component: BookComponent },
-    { path: 'CreateBook', component: BookCreateComponent},
+    { path: 'CreateBook', component: BookCreateComponent },
+    { path: 'BookDetail', component: BookDetailComponent },
+    { path: 'BookEdit', component: BookEditComponent },
   ]},
   { path: '**', component: BookComponent }
 ];
@@ -47,6 +52,8 @@ const routes = [
     LoginComponent,
     BookComponent,
     BookCreateComponent,
+    EnumerationComponent,
+    BookDetailComponent,
   ],
   imports: [
     BrowserModule,
