@@ -36,7 +36,7 @@ const routes = [
     { path: 'AllBooks', component: BookComponent },
     { path: 'CreateBook', component: BookCreateComponent},
   ]},
-  { path: '**', component: RegistrationComponent }
+  { path: '**', component: BookComponent }
 ];
 
 @NgModule({

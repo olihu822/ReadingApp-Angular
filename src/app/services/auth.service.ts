@@ -27,7 +27,8 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/books']);
+      localStorage.setItem('isLoggedIn', 'true');
+      this.router.navigate(['/book/AllBooks']);
     });
   }
 
