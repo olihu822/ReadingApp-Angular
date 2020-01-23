@@ -15,6 +15,7 @@ export class BookEditComponent implements OnInit {
   book : Book;
   editForm : FormGroup;
   dataSource: MatTableDataSource<Book>;
+  model = true;
 
   constructor(private form: FormBuilder, private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
