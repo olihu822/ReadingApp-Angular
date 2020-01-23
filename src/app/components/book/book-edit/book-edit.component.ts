@@ -3,6 +3,8 @@ import { Book } from 'src/app/models/Book';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BookGenre } from '../../enumeration/BookGenreEnum';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-book-edit',
@@ -13,8 +15,9 @@ export class BookEditComponent implements OnInit {
 
   book : Book;
   editForm : FormGroup;
+  dataSource: MatTableDataSource<Book>;
 
-  constructor(private formBuilder: FormBuilder, private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private form: FormBuilder, private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
       this.bookService.getBook(params.get('id')).subscribe((book: Book) => {
         this.book = book;
@@ -27,7 +30,8 @@ export class BookEditComponent implements OnInit {
   }
 
   createForm() {
-    this.editForm = this.formBuilder.group({
+    this.editForm = this.form.group({
+      BookId: new FormControl(this.book.BookId),
       Title: new FormControl(this.book.Title),
       Author: new FormControl(this.book.Author),
       BookGenre: new FormControl(this.book.BookGenre),
@@ -38,6 +42,7 @@ export class BookEditComponent implements OnInit {
 
   onSubmit() {
     const updatedBook: Book = {
+      BookId: this.editForm.value.BookId,
       Title: this.editForm.value.Title,
       Author: this.editForm.value.Author,
       BookGenre: this.editForm.value.BookGenre,

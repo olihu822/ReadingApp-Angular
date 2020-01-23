@@ -54,6 +54,7 @@ const routes = [
     BookCreateComponent,
     EnumerationComponent,
     BookDetailComponent,
+    BookEditComponent,
   ],
   imports: [
     BrowserModule,

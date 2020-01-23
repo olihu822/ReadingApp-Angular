@@ -3,6 +3,7 @@ import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/Book';
 import { MatTableDataSource } from '@angular/material';
 import { MatFormFieldControl } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-book',
@@ -15,13 +16,16 @@ export class BookComponent implements OnInit {
   dataSource: MatTableDataSource<Book>;
 
   book: Book;
-  //books = BOOKS;
 
-  constructor(private bookService: BookService) { }
+  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.bookService.getBooks().subscribe((books: Book[])=>{
       this.dataSource = new MatTableDataSource<Book>(books);
     });
+  }
+
+  goToDetailPage(clickedBook : Book) {
+    this.router.navigate(['book/BookDetail', clickedBook.BookId]);
   }
 }
