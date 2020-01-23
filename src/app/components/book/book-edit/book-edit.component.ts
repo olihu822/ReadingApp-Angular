@@ -16,16 +16,15 @@ export class BookEditComponent implements OnInit {
   editForm : FormGroup;
   dataSource: MatTableDataSource<Book>;
 
-  constructor(private form: FormBuilder, private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private form: FormBuilder, private bookService: BookService, private activatedRoute: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {    
     this.activatedRoute.paramMap.subscribe(params => {
       this.bookService.getBook(params.get('id')).subscribe((book: Book) => {
         this.book = book;
         this.createForm();
       });
     });
-   }
-
-  ngOnInit() {
   }
 
   createForm() {
@@ -49,7 +48,7 @@ export class BookEditComponent implements OnInit {
       Reviewed: this.editForm.value.Reviewed
     };
     this.bookService.editBook(updatedBook).subscribe(() => {
-      this.router.navigate(['/books']);
+      this.router.navigate(['/BookDetail/:id']);
     });
   }
 }

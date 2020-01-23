@@ -18,6 +18,7 @@ export class BookDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       this.bookService.getBook(routeData.get('id')).subscribe((book : Book) => {
         this.book = book;
+        console.log(book);
       });
     });
   }

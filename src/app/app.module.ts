@@ -29,6 +29,7 @@ import { BookComponent } from './components/book/book.component';
 import { BookCreateComponent } from './components/book/book-create/book-create.component';
 import { BookDetailComponent } from './components/book/book-detail/book-detail.component';
 import { BookEditComponent } from './components/book/book-edit/book-edit.component';
+import { BookDeleteComponent } from './components/book/book-delete/book-delete.component';
 
 
 const routes = [
@@ -37,8 +38,9 @@ const routes = [
   { path: 'book', children: [
     { path: 'AllBooks', component: BookComponent },
     { path: 'CreateBook', component: BookCreateComponent },
-    { path: 'BookDetail', component: BookDetailComponent },
-    { path: 'BookEdit', component: BookEditComponent },
+    { path: 'BookDetail/:id', component: BookDetailComponent },
+    { path: 'BookEdit/:id', component: BookEditComponent },
+    { path: 'BookDelete/:id', component: BookDeleteComponent}
   ]},
   { path: '**', component: BookComponent }
 ];
@@ -53,6 +55,7 @@ const routes = [
     BookCreateComponent,
     BookDetailComponent,
     BookEditComponent,
+    BookDeleteComponent,
   ],
   imports: [
     BrowserModule,

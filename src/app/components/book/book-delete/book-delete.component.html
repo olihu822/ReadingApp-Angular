@@ -1,6 +1,8 @@
-<h1>Book Details</h1>
-<br/>
-<div>
+<h1>Delete Book?</h1>
+<h3>Do you really want to delete this book?</h3>
+<br />
+
+<div *ngIf="book">
     <div>
         <label>Book Title:</label>
         <span>{{book.Title}}</span>
@@ -25,8 +27,8 @@
         <label>Reviewed?</label>
         <span>{{book.Reviewed}}</span>
     </div>
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
 </div>
 <br/>
-<button mat-raised-button color="primary" routerLink="/book/BookEdit/:id">Edit</button>
-<br/>
+
 <button mat-raised-button color="primary" routerLink="/book/AllBooks">Back to Books</button>

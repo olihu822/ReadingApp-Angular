@@ -49,8 +49,8 @@
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let book;">
-                <i class="material-icons" routerLink="/books/edit/{{book.BookId}}">edit</i>
-                <i class="material-icons" routerLink="/books/delete/{{book.BookId}}">delete</i>
+                <i class="material-icons" routerLink="/book/BookEdit/{{book.BookId}}">edit</i>
+                <i class="material-icons" routerLink="/book/BookDelete/{{book.BookId}}">delete</i>
             </mat-cell>
         </ng-container>
     </mat-table>
