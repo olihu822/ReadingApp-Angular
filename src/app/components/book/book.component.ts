@@ -12,7 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class BookComponent implements OnInit {
 
-  columnNames = ['Title', 'Author', 'BookGenre', 'Owned', 'Reviewed'];
+  columnNames = ['Title', 'Author', 'BookGenre', 'Owned', 'Reviewed', 'buttons'];
   dataSource: MatTableDataSource<Book>;
 
   book: Book;

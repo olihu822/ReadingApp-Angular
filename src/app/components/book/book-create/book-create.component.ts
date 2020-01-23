@@ -32,8 +32,8 @@ export class BookCreateComponent implements OnInit {
       Title: new FormControl,
       Author: new FormControl,
       BookGenre: new FormControl,
-      Owned: new FormControl,
-      Reviewed: new FormControl
+      Owned: new FormControl(false),
+      Reviewed: new FormControl(false)
     });
   }
 
