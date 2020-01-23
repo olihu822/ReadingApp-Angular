@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/Book';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-book-detail',
@@ -11,6 +12,7 @@ import { Book } from 'src/app/models/Book';
 export class BookDetailComponent implements OnInit {
 
   book : Book;
+  dataSource: MatTableDataSource<Book>;
 
   constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) { }
 

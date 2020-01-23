@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/Book';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-book-delete',
@@ -11,8 +12,9 @@ import { Book } from 'src/app/models/Book';
 export class BookDeleteComponent implements OnInit {
 
   book: Book;
+  dataSource: MatTableDataSource<Book>;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, private bookService: BookService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private bookService: BookService) { }
   
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
