@@ -15,3 +15,7 @@ body {
   html, body { height: 100%; 
     font-size: medium;
   }
+
+  .form {
+    font-family: 'Gelasio', serif;
+  }

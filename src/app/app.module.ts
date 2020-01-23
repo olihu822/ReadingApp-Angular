@@ -27,7 +27,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { BookComponent } from './components/book/book.component';
 import { BookCreateComponent } from './components/book/book-create/book-create.component';
-import { EnumerationComponent } from './components/enumeration/enumeration.component';
 import { BookDetailComponent } from './components/book/book-detail/book-detail.component';
 import { BookEditComponent } from './components/book/book-edit/book-edit.component';
 
@@ -52,7 +51,6 @@ const routes = [
     LoginComponent,
     BookComponent,
     BookCreateComponent,
-    EnumerationComponent,
     BookDetailComponent,
     BookEditComponent,
   ],

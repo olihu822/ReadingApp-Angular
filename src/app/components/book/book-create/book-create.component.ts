@@ -3,9 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { BookService } from 'src/app/services/book.service';
 import { Router } from '@angular/router';
 import { MatFormFieldControl, MatTableDataSource } from '@angular/material';
-import { BookGenre } from '../../enumeration/BookGenreEnum';
 import { Book } from 'src/app/models/Book';
-
 
 @Component({
   selector: 'app-book-create',
@@ -16,18 +14,14 @@ export class BookCreateComponent implements OnInit {
 
   bookForm: FormGroup;
   dataSource: MatTableDataSource<Book>;
-  BookGenre: BookGenre;
-  listOfGenres: BookGenre[];
- 
+  model = true;
+
   constructor(
     private form: FormBuilder, 
     private bookService: BookService, 
     private router: Router) 
     {
       this.createForm();
-      this.bookService.getBooks().subscribe((genre : BookGenre[]) => {
-        this.listOfGenres = genre;
-      });
     }
 
   ngOnInit() {
@@ -37,7 +31,7 @@ export class BookCreateComponent implements OnInit {
     this.bookForm = this.form.group({
       Title: new FormControl,
       Author: new FormControl,
-      Genre: new FormControl,
+      BookGenre: new FormControl,
       Owned: new FormControl,
       Reviewed: new FormControl
     });
@@ -45,8 +39,10 @@ export class BookCreateComponent implements OnInit {
 
   onSubmit() {
     this.bookService.createBook(this.bookForm.value).subscribe(() => {
-        this.router.navigate(['/book/AllBooks'])
+        this.router.navigate(['/book/AllBooks']);
     });
   }
+
+  
 }
 

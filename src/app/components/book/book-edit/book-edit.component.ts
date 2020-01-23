@@ -3,7 +3,6 @@ import { Book } from 'src/app/models/Book';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BookGenre } from '../../enumeration/BookGenreEnum';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
