@@ -18,6 +18,7 @@ export class BookDeleteComponent implements OnInit {
   
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(params => {
+      console.log(params.get('id'));
       this.bookService.getBook(params.get('id')).subscribe((book : Book) => {
         this.book = book;
       });
@@ -25,6 +26,7 @@ export class BookDeleteComponent implements OnInit {
   }
 
   onDelete() {
+    console.log(this.book);
     this.bookService.deleteBook(this.book.BookId).subscribe(() => {
       this.router.navigate(['/book/AllBooks'])
     })

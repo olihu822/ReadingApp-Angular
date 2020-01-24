@@ -29,7 +29,7 @@ export class BookEditComponent implements OnInit {
   }
 
   createForm() {
-    this.editForm = this.form.group({
+    this.editForm = new FormGroup({
       BookId: new FormControl(this.book.BookId),
       Title: new FormControl(this.book.Title),
       Author: new FormControl(this.book.Author),

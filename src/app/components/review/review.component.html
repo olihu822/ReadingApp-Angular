@@ -1,0 +1,52 @@
+<div>
+    <h1>Reviews</h1>
+    <a mat-raised-button color="primary" routerLink="/review/CreateReview">Create a Book Review</a>
+</div>
+
+<div>
+    <br>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <mat-cell *matCellDef="let review;">
+            <i class="material-icons" routerLink="/review/EditReview/{{review.ReviewId}}">edit</i>
+            <i class="material-icons" routerLink="/review/DeleteReview/{{review.ReviewId}}">delete</i>
+        </mat-cell>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let review;">
+                <i class="material-icons" routerLink="/review/ReviewDetail/{{review.ReviewId}}">library_books</i>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="">
+            <mat-header-cell *matHeaderCellDef>Book Title</mat-header-cell>
+            <mat-cell *matCellDef="let review;">{{review.ReviewedBookId}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="">
+            <mat-header-cell *matHeaderCellDef>MyRating</mat-header-cell>
+            <mat-cell *matCellDef="let review;">{{review.MyRating}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="">
+            <mat-header-cell *matHeaderCellDef>MyHeadline</mat-header-cell>
+            <mat-cell *matCellDef="let review;">{{review.MyHeadline}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="">
+            <mat-header-cell *matHeaderCellDef>MyReview</mat-header-cell>
+            <mat-cell *matCellDef="let review;">{{review.MyReview}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let review;">
+                <i class="material-icons" routerLink="/review/EditReview/{{review.ReviewId}}">edit</i>
+                <i class="material-icons" routerLink="/review/DeleteReview/{{review.ReviewId}}">delete</i>
+            </mat-cell>
+        </ng-container>
+    </mat-table>
+</div>

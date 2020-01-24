@@ -1,6 +1,8 @@
 <h1>Book Details</h1>
 <br/>
-<div>
+
+<div *ngIf="book">
+    <div>
     <div>
         <label>Book Title:</label>
         <span>{{book.Title}}</span>
@@ -26,7 +28,8 @@
         <span>{{book.Reviewed}}</span>
     </div>
 </div>
-<br/>
-<button mat-raised-button color="primary" routerLink="/book/BookEdit/:id">Edit</button>
+</div>
+
+
 <br/>
 <button mat-raised-button color="primary" routerLink="/book/AllBooks">Back to Books</button>

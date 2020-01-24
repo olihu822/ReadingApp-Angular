@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Book } from '../models/Book';
 
 const Api_Url = 'https://localhost:44305';
+//changes to http from https
 
 @Injectable({
   providedIn: 'root'
@@ -25,11 +26,11 @@ export class BookService {
   }
 
   editBook(book : Book) {
-    return this.http.put(`${Api_Url}/api/book/Edit`, book, { headers: this.getHeaders() })
+    return this.http.put(`${Api_Url}/api/book/EditBook`, book, { headers: this.getHeaders() })
   }
 
   deleteBook(id) {
-    return this.http.delete(`${Api_Url}/api/book/Delete/${id}`, { headers: this.getHeaders() })
+    return this.http.delete(`${Api_Url}/api/book/DeleteBook/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {
