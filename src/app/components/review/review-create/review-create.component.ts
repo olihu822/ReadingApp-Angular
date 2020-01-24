@@ -14,8 +14,8 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class ReviewCreateComponent implements OnInit {
 
+  book: Book;
   review : Review;
-  BookId: Book;
   reviewForm: FormGroup;
   datasource: MatTableDataSource<Review>;
   model = true;
@@ -23,27 +23,34 @@ export class ReviewCreateComponent implements OnInit {
   constructor(
     private form: FormBuilder, 
     private reviewService: ReviewService, private bookService: BookService,
-    private router: Router, private activatedRoute: ActivatedRoute) { }
+    private router: Router, private activatedRoute: ActivatedRoute) 
+    { 
+      console.log();
+      this.createForm();    
+    }
+    
+    ngOnInit() {     
+       
+    }
 
-  ngOnInit() {
-    console.log();
-    this.createForm();    
-    console.log();
-  }
-
-  createForm() {    
-    this.activatedRoute.paramMap.subscribe(paramName => {
-    this.reviewForm.setControl("ReviewedBookId", new FormControl(this.review.ReviewedBookId));
-
-    this.reviewForm = this.form.group({
-      ReviewId: new FormControl(this.review.ReviewId),
-      ReviewedBookId: new FormControl(this.review.ReviewedBookId),
-      MyRating: new FormControl(this.review.MyRating),
-      MyHeadline: new FormControl(this.review.MyHeadline),
-      MyReview: new FormControl(this.review.MyReview)
+    createForm() {    
+      this.reviewForm = this.form.group({
+        ReviewId: new FormControl,
+        ReviewedBookId: new FormControl,
+        MyRating: new FormControl,
+        MyHeadline: new FormControl,
+        MyReview: new FormControl
       });
-    });
-  }
+      //this.bookService.getBooks().subscribe(() => { 
+     //   this.book.BookId = this.review.ReviewedBookId
+   //  });
+    }
+
+//Could't figure out this foreign key code. 
+//It seems to be connecting and displaying 
+//the appropriate number of reviews 
+//based on the number of books, 
+//but I can't get the reviews to show on the page...
 
   onSubmit() {
     this.reviewService.createReview(this.reviewForm.value).subscribe(() => {

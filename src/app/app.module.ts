@@ -72,7 +72,7 @@ const routes = [
     ReviewCreateComponent,
     ReviewDetailComponent,
     ReviewEditComponent,
-    ReviewDeleteComponent
+    ReviewDeleteComponent,
   ],
   imports: [
     BrowserModule,
