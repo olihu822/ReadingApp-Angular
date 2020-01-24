@@ -32,6 +32,7 @@ import { BookEditComponent } from './components/book/book-edit/book-edit.compone
 import { BookDeleteComponent } from './components/book/book-delete/book-delete.component';
 import { ReviewComponent } from './components/review/review.component';
 import { ReviewCreateComponent } from './components/review/review-create/review-create.component';
+import { ReviewService } from './services/review.service';
 
 
 const routes = [
@@ -46,6 +47,7 @@ const routes = [
   ]},
   { path: 'review', children: [
     { path: 'AllReviews', component: ReviewComponent },
+    { path: 'CreateReview', component: ReviewCreateComponent },
   ]},
   { path: '**', component: BookComponent }
 ];
@@ -82,6 +84,7 @@ const routes = [
   providers: [
     AuthService,
     BookService,
+    ReviewService
   ],
   bootstrap: [AppComponent]
 })

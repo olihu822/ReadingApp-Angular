@@ -8,7 +8,7 @@ const Api_Url = 'https://localhost:44305';
 @Injectable({
   providedIn: 'root'
 })
-export class reviewService {
+export class ReviewService {
 
     constructor(private http: HttpClient, private router: Router) { }
     
@@ -16,7 +16,7 @@ export class reviewService {
         return this.http.get(`${Api_Url}/api/book/AllBooks`, { headers: this.getHeaders() });
       }
 
-      getReview(id) {
+     getReview(id) {
         return this.http.get(`${Api_Url}/api/review/${id}`, { headers: this.getHeaders() });
       }
     

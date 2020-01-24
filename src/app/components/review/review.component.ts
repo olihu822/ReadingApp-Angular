@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Review } from 'src/app/models/Review';
-import { reviewService } from 'src/app/services/review.service';
+import { ReviewService } from 'src/app/services/review.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class ReviewComponent implements OnInit {
 
   review: Review;
 
-  constructor(private reviewService: reviewService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private reviewService: ReviewService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.reviewService.getReviews().subscribe((reviews: Review[])=>{
