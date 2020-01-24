@@ -17,27 +17,27 @@
         <ng-container matColumnDef="details">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let review;">
-                <i class="material-icons" routerLink="/review/ReviewDetail/{{review.ReviewId}}">library_books</i>
+                <i class="material-icons" routerLink="/review/ReviewDetail/{{review.ReviewId}}">flare</i>
             </mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="">
+        <ng-container matColumnDef="booktitle">
             <mat-header-cell *matHeaderCellDef>Book Title</mat-header-cell>
             <mat-cell *matCellDef="let review;">{{review.ReviewedBookId}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="">
-            <mat-header-cell *matHeaderCellDef>MyRating</mat-header-cell>
+        <ng-container matColumnDef="rating">
+            <mat-header-cell *matHeaderCellDef>My Rating</mat-header-cell>
             <mat-cell *matCellDef="let review;">{{review.MyRating}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="">
-            <mat-header-cell *matHeaderCellDef>MyHeadline</mat-header-cell>
+        <ng-container matColumnDef="headline">
+            <mat-header-cell *matHeaderCellDef>My Headline</mat-header-cell>
             <mat-cell *matCellDef="let review;">{{review.MyHeadline}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="">
-            <mat-header-cell *matHeaderCellDef>MyReview</mat-header-cell>
+        <ng-container matColumnDef="review">
+            <mat-header-cell *matHeaderCellDef>My Review</mat-header-cell>
             <mat-cell *matCellDef="let review;">{{review.MyReview}}</mat-cell>
         </ng-container>
 

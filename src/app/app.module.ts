@@ -30,6 +30,8 @@ import { BookCreateComponent } from './components/book/book-create/book-create.c
 import { BookDetailComponent } from './components/book/book-detail/book-detail.component';
 import { BookEditComponent } from './components/book/book-edit/book-edit.component';
 import { BookDeleteComponent } from './components/book/book-delete/book-delete.component';
+import { ReviewComponent } from './components/review/review.component';
+import { ReviewCreateComponent } from './components/review/review-create/review-create.component';
 
 
 const routes = [
@@ -41,6 +43,9 @@ const routes = [
     { path: 'BookDetail/:id', component: BookDetailComponent },
     { path: 'BookEdit/:id', component: BookEditComponent },
     { path: 'BookDelete/:id', component: BookDeleteComponent}
+  ]},
+  { path: 'review', children: [
+    { path: 'AllReviews', component: ReviewComponent },
   ]},
   { path: '**', component: BookComponent }
 ];
@@ -56,6 +61,8 @@ const routes = [
     BookDetailComponent,
     BookEditComponent,
     BookDeleteComponent,
+    ReviewComponent,
+    ReviewCreateComponent,
   ],
   imports: [
     BrowserModule,

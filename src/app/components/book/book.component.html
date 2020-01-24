@@ -17,7 +17,7 @@
         <ng-container matColumnDef="details">
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let book;">
-                <i class="material-icons" routerLink="/book/BookDetail/{{book.BookId}}">library_books</i>
+                <i class="material-icons" routerLink="/book/BookDetail/{{book.BookId}}">flare</i>
             </mat-cell>
         </ng-container>
 
@@ -37,12 +37,12 @@
         </ng-container>
 
         <ng-container matColumnDef="Owned">
-            <mat-header-cell *matHeaderCellDef>Owned</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Owned?</mat-header-cell>
             <mat-cell *matCellDef="let book;">{{book.Owned}}</mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="Reviewed">
-            <mat-header-cell *matHeaderCellDef>Reviewed</mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Reviewed?</mat-header-cell>
             <mat-cell *matCellDef="let book;">{{book.Reviewed}}</mat-cell>
         </ng-container>
 

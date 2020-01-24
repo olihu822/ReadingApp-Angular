@@ -5,7 +5,7 @@
     </div>
 
         <button mat-button class="nav-btn" routerLink="/book/AllBooks">Books</button>
-        <button mat-button class="nav-btn" routerLink="/review">Your Reviews</button>
+        <button mat-button class="nav-btn" routerLink="/review/AllReviews">Reviews</button>
         <span class="flex-filler"></span>
         <button *ngIf="!authService.loggedIn" mat-button class="nav-btn"  routerLink="/register">Register</button>
         <button *ngIf="!authService.loggedIn" mat-button class="nav-btn" routerLink="/login">Login</button>
