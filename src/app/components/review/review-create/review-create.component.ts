@@ -32,7 +32,7 @@ export class ReviewCreateComponent implements OnInit {
   }
 
   createForm() {    
-    this.activatedRoute.paramMap.subscribe(params => {
+    this.activatedRoute.paramMap.subscribe(paramName => {
     this.reviewForm.setControl("ReviewedBookId", new FormControl(this.review.ReviewedBookId));
 
     this.reviewForm = this.form.group({

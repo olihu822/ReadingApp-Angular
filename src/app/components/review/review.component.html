@@ -3,7 +3,7 @@
     <a mat-raised-button color="primary" routerLink="/review/CreateReview">Create a Book Review</a>
 </div>
 
-<div>
+<div *ngIf="review">
     <br>
     <mat-table #table [dataSource]="dataSource">
         <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>

@@ -1,0 +1,31 @@
+<h1>Review Details</h1>
+<br/>
+
+<div *ngIf="review">
+    <div>
+    <div>
+        <label>Reviewed Book:</label>
+        <span>{{review.ReviewedBookId}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Rating:</label>
+        <span>{{review.MyRating}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Headline:</label>
+        <span>{{review.MyHeadline}}</span>
+    </div>
+    <br/>
+    <div>
+        <label>Review</label>
+        <span>{{review.MyReview}}</span>
+    </div>
+    <br/>
+</div>
+</div>
+
+
+<br/>
+<button mat-raised-button color="primary" routerLink="/review/AllReviews">Back to Reviews</button>

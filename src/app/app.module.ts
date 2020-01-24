@@ -33,7 +33,9 @@ import { BookDeleteComponent } from './components/book/book-delete/book-delete.c
 import { ReviewComponent } from './components/review/review.component';
 import { ReviewCreateComponent } from './components/review/review-create/review-create.component';
 import { ReviewService } from './services/review.service';
-
+import { ReviewDetailComponent } from './components/review/review-detail/review-detail.component';
+import { ReviewEditComponent } from './components/review/review-edit/review-edit.component';
+import { ReviewDeleteComponent } from './components/review/review-delete/review-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -48,6 +50,9 @@ const routes = [
   { path: 'review', children: [
     { path: 'AllReviews', component: ReviewComponent },
     { path: 'CreateReview', component: ReviewCreateComponent },
+    { path: 'ReviewDetail/:id', component: ReviewDetailComponent},
+    { path: 'ReviewEdit/:id', component: ReviewEditComponent},
+    { path: 'ReviewDelete/:id', component: ReviewDeleteComponent}
   ]},
   { path: '**', component: BookComponent }
 ];
@@ -65,6 +70,9 @@ const routes = [
     BookDeleteComponent,
     ReviewComponent,
     ReviewCreateComponent,
+    ReviewDetailComponent,
+    ReviewEditComponent,
+    ReviewDeleteComponent
   ],
   imports: [
     BrowserModule,

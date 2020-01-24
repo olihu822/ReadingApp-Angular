@@ -12,7 +12,7 @@ import { MatTableDataSource } from '@angular/material';
 export class BookDetailComponent implements OnInit {
 
   book : Book;
-  dataSource: MatTableDataSource<Book>;
+  dataSource : MatTableDataSource<Book>;
 
   constructor(private activatedRoute: ActivatedRoute, private bookService: BookService) { }
 
@@ -24,5 +24,4 @@ export class BookDetailComponent implements OnInit {
       });
     });
   }
-
 }
